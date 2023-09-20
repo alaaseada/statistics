@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASP Query Result</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <button class="btn" id="summarize-btn">Summerize</button>
+    <table class="tg" id="result_table">
+      <thead>
+        <tr>
+          <th class="tg-0lax">RecID</th>
+          <th class="tg-0lax">MMSI</th>
+          <th class="tg-0lax">نطاق جغرافى</th>
+          <th class="tg-0lax">مناطق ميناء الاسكندريه</th>
+          <th class="tg-0lax">مناطق ميناء الدخيله</th>
+          <th class="tg-0lax">مناطق انتظار</th>
+          <th class="tg-0lax">أرصفة ميناء الاسكندريه</th>
+          <th class="tg-0lax">أرصفة ميناء الدخيله</th>
+          <th class="tg-0lax">مخطاف خارجى</th>
+          <th class="tg-0lax">AlexAnchors</th>
+          <th class="tg-0lax">DkhAnchors</th>
+          <th class="tg-0lax">ChangeDate</th>
+          <th class="tg-0lax">lat</th>
+          <th class="tg-0lax">lng</th>
+          <th class="tg-0lax">Status</th>
+          <th class="tg-0lax">Speed</th>
+          <th class="tg-0lax">Heading</th>
+          <th class="tg-0lax">EditDate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tg-0lax">27</td>
+          <td class="tg-0lax">215060000</td>
+          <td class="tg-0lax">El Dikhelhila Port</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Area 02</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Berth 94/2</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-13 01:00:14</td>
+          <td class="tg-0lax">31.1405316666667</td>
+          <td class="tg-0lax">29.7983266666667</td>
+          <td class="tg-0lax">Moored</td>
+          <td class="tg-0lax">0</td>
+          <td class="tg-0lax">212</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">26</td>
+          <td class="tg-0lax">218008040</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-07-14 10:52:29</td>
+          <td class="tg-0lax">32.02166</td>
+          <td class="tg-0lax">31.1498666666667</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">13.7</td>
+          <td class="tg-0lax">291</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">3</td>
+          <td class="tg-0lax">271044600</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">External Waiting Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">El Dikhelhila Waiting Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Anchor Berth D08</td>
+          <td class="tg-0lax">2023-09-12 05:46:11</td>
+          <td class="tg-0lax">31.2166233333333</td>
+          <td class="tg-0lax">29.7587166666667</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">0</td>
+          <td class="tg-0lax">312</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">28</td>
+          <td class="tg-0lax">312026000</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Anchor Resrtricted Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 04:32:09</td>
+          <td class="tg-0lax">31.17865</td>
+          <td class="tg-0lax">29.730635</td>
+          <td class="tg-0lax">At anchor</td>
+          <td class="tg-0lax">0</td>
+          <td class="tg-0lax">304</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">23</td>
+          <td class="tg-0lax">314577000</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-11 12:41:20</td>
+          <td class="tg-0lax">31.38075</td>
+          <td class="tg-0lax">30.0805333333333</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">0.3</td>
+          <td class="tg-0lax">312</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">11</td>
+          <td class="tg-0lax">314638000</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Pilot Waiting Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 23:59:26</td>
+          <td class="tg-0lax">31.2015666666667</td>
+          <td class="tg-0lax">29.7912166666667</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">5.8</td>
+          <td class="tg-0lax">184</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">8</td>
+          <td class="tg-0lax">355540000</td>
+          <td class="tg-0lax">Alex Port</td>
+          <td class="tg-0lax">Recommended Channel</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 23:46:10</td>
+          <td class="tg-0lax">31.18195</td>
+          <td class="tg-0lax">29.86137</td>
+          <td class="tg-0lax">At anchor</td>
+          <td class="tg-0lax">4.3</td>
+          <td class="tg-0lax">35</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">24</td>
+          <td class="tg-0lax">450612000</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">External Waiting Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">El Dikhelhila Waiting Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Anchor Berth D04</td>
+          <td class="tg-0lax">2023-09-13 12:44:51</td>
+          <td class="tg-0lax">31.20725</td>
+          <td class="tg-0lax">29.7600666666667</td>
+          <td class="tg-0lax">At anchor</td>
+          <td class="tg-0lax">0.6</td>
+          <td class="tg-0lax">325</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">5</td>
+          <td class="tg-0lax">477642400</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 20:52:41</td>
+          <td class="tg-0lax">31.3032583333333</td>
+          <td class="tg-0lax">29.6696833333333</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">0.8</td>
+          <td class="tg-0lax">64</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">10</td>
+          <td class="tg-0lax">511100853</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">El Dikhelhila&nbsp;&nbsp;Pass</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 23:58:33</td>
+          <td class="tg-0lax">31.1653516666667</td>
+          <td class="tg-0lax">29.8068033333333</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">7.2</td>
+          <td class="tg-0lax">173</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">31</td>
+          <td class="tg-0lax">538005039</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 22:55:48</td>
+          <td class="tg-0lax">31.4832833333333</td>
+          <td class="tg-0lax">29.6427666666667</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">13</td>
+          <td class="tg-0lax">337</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">9</td>
+          <td class="tg-0lax">538008024</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Pilot Waiting Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 23:45:59</td>
+          <td class="tg-0lax">31.1866383333333</td>
+          <td class="tg-0lax">29.7935333333333</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">8.6</td>
+          <td class="tg-0lax">30</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">21</td>
+          <td class="tg-0lax">620010000</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Pilot Waiting Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-12 07:23:52</td>
+          <td class="tg-0lax">31.1775316666667</td>
+          <td class="tg-0lax">29.7733416666667</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">0.2</td>
+          <td class="tg-0lax">315</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">15</td>
+          <td class="tg-0lax">620042000</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Anchor Resrtricted Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 23:45:12</td>
+          <td class="tg-0lax">31.2391583333333</td>
+          <td class="tg-0lax">29.7898733333333</td>
+          <td class="tg-0lax">Under way sailing</td>
+          <td class="tg-0lax">4.1</td>
+          <td class="tg-0lax">261</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">29</td>
+          <td class="tg-0lax">620558000</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-13 23:20:34</td>
+          <td class="tg-0lax">31.1607083333333</td>
+          <td class="tg-0lax">29.76909</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">0.1</td>
+          <td class="tg-0lax">324</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">7</td>
+          <td class="tg-0lax">6221128</td>
+          <td class="tg-0lax">Alex Port</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-10 14:33:12</td>
+          <td class="tg-0lax">31.1952483333333</td>
+          <td class="tg-0lax">29.8616633333333</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">0</td>
+          <td class="tg-0lax">288</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">18</td>
+          <td class="tg-0lax">622112833</td>
+          <td class="tg-0lax">El Dikhelhila Port</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Area 03</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Berth 96/4</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 22:49:56</td>
+          <td class="tg-0lax">31.1367</td>
+          <td class="tg-0lax">29.7922633333333</td>
+          <td class="tg-0lax">Reserved for future use</td>
+          <td class="tg-0lax">0.1</td>
+          <td class="tg-0lax">45</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">13</td>
+          <td class="tg-0lax">622112834</td>
+          <td class="tg-0lax">Alex Port</td>
+          <td class="tg-0lax">Area 01</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Alex Gona Service</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 23:04:19</td>
+          <td class="tg-0lax">31.198985</td>
+          <td class="tg-0lax">29.8780783333333</td>
+          <td class="tg-0lax">Not defined (default)</td>
+          <td class="tg-0lax">0</td>
+          <td class="tg-0lax">58</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">4</td>
+          <td class="tg-0lax">622112835</td>
+          <td class="tg-0lax">Alex Port</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 23:58:21</td>
+          <td class="tg-0lax">31.1843333333333</td>
+          <td class="tg-0lax">29.8626783333333</td>
+          <td class="tg-0lax">Not defined (default)</td>
+          <td class="tg-0lax">3.8</td>
+          <td class="tg-0lax">207</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">12</td>
+          <td class="tg-0lax">622139002</td>
+          <td class="tg-0lax">Alex Port</td>
+          <td class="tg-0lax">Area 03</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Berth 22</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-10 14:33:12</td>
+          <td class="tg-0lax">31.184825</td>
+          <td class="tg-0lax">29.8776783333333</td>
+          <td class="tg-0lax">Moored</td>
+          <td class="tg-0lax">0</td>
+          <td class="tg-0lax">177</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">1</td>
+          <td class="tg-0lax">622177217</td>
+          <td class="tg-0lax">Alex Port</td>
+          <td class="tg-0lax">Area 01</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Internal Sea</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 21:56:26</td>
+          <td class="tg-0lax">31.1982666666667</td>
+          <td class="tg-0lax">29.8759466666667</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">0</td>
+          <td class="tg-0lax">267</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">25</td>
+          <td class="tg-0lax">636015849</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">External Waiting Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Alexandria Waiting Area</td>
+          <td class="tg-0lax">Anchor Berth A18</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-10 14:35:39</td>
+          <td class="tg-0lax">31.227145</td>
+          <td class="tg-0lax">29.7056483333333</td>
+          <td class="tg-0lax">At anchor</td>
+          <td class="tg-0lax">0</td>
+          <td class="tg-0lax">314</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">22</td>
+          <td class="tg-0lax">636018037</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-01 20:56:07</td>
+          <td class="tg-0lax">32.1453066666667</td>
+          <td class="tg-0lax">31.3488766666667</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">14.1</td>
+          <td class="tg-0lax">305</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">2</td>
+          <td class="tg-0lax">636021506</td>
+          <td class="tg-0lax">El Dikhelhila Port</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Area 03</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Berth 98/3</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 20:32:11</td>
+          <td class="tg-0lax">31.1448216666667</td>
+          <td class="tg-0lax">29.7936066666667</td>
+          <td class="tg-0lax">Moored</td>
+          <td class="tg-0lax">0</td>
+          <td class="tg-0lax">56</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">6</td>
+          <td class="tg-0lax">667001460</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">External Waiting Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Alexandria Waiting Area</td>
+          <td class="tg-0lax">Anchor Berth A04</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 06:53:44</td>
+          <td class="tg-0lax">31.20145</td>
+          <td class="tg-0lax">29.75227</td>
+          <td class="tg-0lax">At anchor</td>
+          <td class="tg-0lax">0.2</td>
+          <td class="tg-0lax">305</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">14</td>
+          <td class="tg-0lax">671029100</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Pilot Waiting Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-10 14:33:13</td>
+          <td class="tg-0lax">31.18777</td>
+          <td class="tg-0lax">29.7859716666667</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">0</td>
+          <td class="tg-0lax">310</td>
+          <td class="tg-0lax">2023-09-15 00:00:08</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">56</td>
+          <td class="tg-0lax">205146000</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-10 14:33:12</td>
+          <td class="tg-0lax">31.330205</td>
+          <td class="tg-0lax">30.0221533333333</td>
+          <td class="tg-0lax">Restricted manoeuverability</td>
+          <td class="tg-0lax">14.1</td>
+          <td class="tg-0lax">192</td>
+          <td class="tg-0lax">2023-09-15 00:00:26</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">60</td>
+          <td class="tg-0lax">218008040</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-07-14 10:52:29</td>
+          <td class="tg-0lax">32.0218966666667</td>
+          <td class="tg-0lax">31.1490933333333</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">13.7</td>
+          <td class="tg-0lax">291</td>
+          <td class="tg-0lax">2023-09-15 00:00:26</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">44</td>
+          <td class="tg-0lax">271044600</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">External Waiting Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">El Dikhelhila Waiting Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Anchor Berth D08</td>
+          <td class="tg-0lax">2023-09-12 05:46:11</td>
+          <td class="tg-0lax">31.21662</td>
+          <td class="tg-0lax">29.7587016666667</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">0</td>
+          <td class="tg-0lax">312</td>
+          <td class="tg-0lax">2023-09-15 00:00:26</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">39</td>
+          <td class="tg-0lax">305886000</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-07-14 04:32:21</td>
+          <td class="tg-0lax">31.2851666666667</td>
+          <td class="tg-0lax">29.6693333333333</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">9.4</td>
+          <td class="tg-0lax">115</td>
+          <td class="tg-0lax">2023-09-15 00:00:26</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">43</td>
+          <td class="tg-0lax">311000723</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-12 15:42:56</td>
+          <td class="tg-0lax">31.3014116666667</td>
+          <td class="tg-0lax">29.8054366666667</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">7.6</td>
+          <td class="tg-0lax">190</td>
+          <td class="tg-0lax">2023-09-15 00:00:26</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">70</td>
+          <td class="tg-0lax">314577000</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-11 12:41:20</td>
+          <td class="tg-0lax">31.3807366666667</td>
+          <td class="tg-0lax">30.0804966666667</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">0.3</td>
+          <td class="tg-0lax">313</td>
+          <td class="tg-0lax">2023-09-15 00:00:26</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">45</td>
+          <td class="tg-0lax">314638000</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Pilot Waiting Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 23:59:26</td>
+          <td class="tg-0lax">31.201</td>
+          <td class="tg-0lax">29.7912</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">5.8</td>
+          <td class="tg-0lax">185</td>
+          <td class="tg-0lax">2023-09-15 00:00:26</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">59</td>
+          <td class="tg-0lax">341843000</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Anchor Resrtricted Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 00:00:32</td>
+          <td class="tg-0lax">31.1684</td>
+          <td class="tg-0lax">29.7359266666667</td>
+          <td class="tg-0lax">At anchor</td>
+          <td class="tg-0lax">0.2</td>
+          <td class="tg-0lax">306</td>
+          <td class="tg-0lax">2023-09-15 00:00:26</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">36</td>
+          <td class="tg-0lax">355540000</td>
+          <td class="tg-0lax">Alex Port</td>
+          <td class="tg-0lax">Recommended Channel</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 23:46:10</td>
+          <td class="tg-0lax">31.1822833333333</td>
+          <td class="tg-0lax">29.8616316666667</td>
+          <td class="tg-0lax">At anchor</td>
+          <td class="tg-0lax">4.4</td>
+          <td class="tg-0lax">36</td>
+          <td class="tg-0lax">2023-09-15 00:00:26</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">75</td>
+          <td class="tg-0lax">477271800</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">External Waiting Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Alexandria Waiting Area</td>
+          <td class="tg-0lax">Anchor Berth A21</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-12 21:54:39</td>
+          <td class="tg-0lax">31.2281583333333</td>
+          <td class="tg-0lax">29.6943516666667</td>
+          <td class="tg-0lax">At anchor</td>
+          <td class="tg-0lax">0</td>
+          <td class="tg-0lax">316</td>
+          <td class="tg-0lax">2023-09-15 00:00:26</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">57</td>
+          <td class="tg-0lax">477642400</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 20:52:41</td>
+          <td class="tg-0lax">31.3031766666667</td>
+          <td class="tg-0lax">29.6697416666667</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">0.8</td>
+          <td class="tg-0lax">65</td>
+          <td class="tg-0lax">2023-09-15 00:00:26</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">42</td>
+          <td class="tg-0lax">511100853</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">El Dikhelhila&nbsp;&nbsp;Pass</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 23:58:33</td>
+          <td class="tg-0lax">31.1646116666667</td>
+          <td class="tg-0lax">29.8068733333333</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">7.3</td>
+          <td class="tg-0lax">173</td>
+          <td class="tg-0lax">2023-09-15 00:00:26</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">71</td>
+          <td class="tg-0lax">511100999</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Anchor Resrtricted Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 18:46:10</td>
+          <td class="tg-0lax">31.2135716666667</td>
+          <td class="tg-0lax">29.782005</td>
+          <td class="tg-0lax">At anchor</td>
+          <td class="tg-0lax">0.2</td>
+          <td class="tg-0lax">313</td>
+          <td class="tg-0lax">2023-09-15 00:00:26</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">53</td>
+          <td class="tg-0lax">538007405</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">External Waiting Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Alexandria Waiting Area</td>
+          <td class="tg-0lax">Anchor Berth A23</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-13 17:06:12</td>
+          <td class="tg-0lax">31.219285</td>
+          <td class="tg-0lax">29.6710483333333</td>
+          <td class="tg-0lax">At anchor</td>
+          <td class="tg-0lax">0.2</td>
+          <td class="tg-0lax">315</td>
+          <td class="tg-0lax">2023-09-15 00:00:26</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">38</td>
+          <td class="tg-0lax">538008024</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Pilot Waiting Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 23:45:59</td>
+          <td class="tg-0lax">31.1874033333333</td>
+          <td class="tg-0lax">29.7940383333333</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">8.8</td>
+          <td class="tg-0lax">30</td>
+          <td class="tg-0lax">2023-09-15 00:00:26</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">35</td>
+          <td class="tg-0lax">538008844</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">External Waiting Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Alexandria Waiting Area</td>
+          <td class="tg-0lax">Anchor Berth A22</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-10 14:36:10</td>
+          <td class="tg-0lax">31.2381533333333</td>
+          <td class="tg-0lax">29.69854</td>
+          <td class="tg-0lax">At anchor</td>
+          <td class="tg-0lax">0.1</td>
+          <td class="tg-0lax">330</td>
+          <td class="tg-0lax">2023-09-15 00:00:26</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">55</td>
+          <td class="tg-0lax">620010000</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Pilot Waiting Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-12 07:23:52</td>
+          <td class="tg-0lax">31.177525</td>
+          <td class="tg-0lax">29.77334</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">0.1</td>
+          <td class="tg-0lax">315</td>
+          <td class="tg-0lax">2023-09-15 00:00:26</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">50</td>
+          <td class="tg-0lax">620042000</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Anchor Resrtricted Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-14 23:45:12</td>
+          <td class="tg-0lax">31.239135</td>
+          <td class="tg-0lax">29.7895933333333</td>
+          <td class="tg-0lax">Under way sailing</td>
+          <td class="tg-0lax">4.9</td>
+          <td class="tg-0lax">258</td>
+          <td class="tg-0lax">2023-09-15 00:00:26</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">58</td>
+          <td class="tg-0lax">620558000</td>
+          <td class="tg-0lax">External Great Area</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">2023-09-13 23:20:34</td>
+          <td class="tg-0lax">31.1607083333333</td>
+          <td class="tg-0lax">29.7690916666667</td>
+          <td class="tg-0lax">Under way using engine</td>
+          <td class="tg-0lax">0.2</td>
+          <td class="tg-0lax">324</td>
+          <td class="tg-0lax">2023-09-15 00:00:26</td>
+        </tr>
+      </tbody>
+    </table>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -3,11 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>ASP Query Result</title>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <button class="btn" id="summarize-btn">Summerize</button>
+    <form class="form" id='summarizing_option_form'>
+      <p>Summarize By: </p>
+      <div class='form-row'>
+      <input type="checkbox" id="outer_anchor" name="outer_anchor" value="مخطاف خارجى">
+      <label for="outer_anchor"> مخطاف خارجي</label><br>
+      <input type="checkbox" id="waiting_areas" name="waiting_areas" value="مناطق انتظار">
+      <label for="waiting_areas"> مناطق انتظار</label><br>
+      <input type="checkbox" id="geo_location" name="geo_location" value="نطاق جغرافى">
+      <label for="geo_location"> نطاق جغرافي</label><br>
+      <input type="checkbox" id="status" name="status" value="status">
+      <label for="status"> الحالة</label><br>
+      </div>
+      <button class="btn" type="submit" id="summarize-btn">Summarize</button>
+    </form>
     <table class="tg" id="result_table">
       <thead>
         <tr>
