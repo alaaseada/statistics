@@ -19,6 +19,7 @@ summarizing_option_form.addEventListener('submit', (e) => {
 });
 
 function summarize_Table(tableId, selected_filters) {
+  console.log(document.querySelectorAll(`#${tableId} tbody tr`).length)
   // Get table Headers
   var tableHeaders = Array.prototype.map.call(
     document.querySelectorAll(`#${tableId} thead tr th`),
@@ -34,21 +35,35 @@ function summarize_Table(tableId, selected_filters) {
     }
   );
   // Get the targeted column
-  const summary_col = tableInfo.map(
-    (row) => row[tableHeaders.indexOf(selected_filters[0])]
+  const summary_cols = tableInfo.map(
+    (row) => {
+      if(selected_filters.length > 1){
+        const columns = selected_filters.map((criteria) => row[tableHeaders.indexOf(criteria)])
+        return columns
+      }else{
+        return row[tableHeaders.indexOf(selected_filters[0])]
+      }
+    }
   );
-  const distinct_status = Array.from(new Set(summary_col));
-  const totals = {};
-  distinct_status.forEach((value) => {
+  console.log(summary_cols)
+  
+  const root_distinct_values = Array.from(new Set(summary_cols.map(item => item[0])));
+  const child_distinct_values = Array.from(new Set(summary_cols.map(item => item[1])));
+
+  console.log(root_distinct_values, child_distinct_values)
+  let totals = {};
+  root_distinct_values.forEach((value) => {
     const value_to_compare = value;
     if (value === '') value = 'empty';
-    totals[value] = summary_col.reduce((total, currentValue) => {
+    totals[value] = summary_cols.map(item => item[1]).reduce((total, currentValue) => {
       if (currentValue === value_to_compare) {
         total += 1;
       }
       return total;
     }, 0);
   });
+  console.log(totals)
+  totals = {'moored': 40}
   // ================Display=============
   report_window.document.write(`
     <html>
@@ -60,7 +75,7 @@ function summarize_Table(tableId, selected_filters) {
   script.src = 'loader.js';
   report_window.document.write(script.outerHTML);
   report_window.document.write(
-    `<script>google.charts.load('current', {'packages':['corechart']});</script>`
+    `<script>google.charts.load('current',{'packages':['corechart']});</script>`
   );
 
   report_window.document.write(`</head>
@@ -74,6 +89,9 @@ function summarize_Table(tableId, selected_filters) {
           <button class='btn header-btn' id='draw-bar' onclick='drawBarChart("Title", "Field",${JSON.stringify(
             totals
           )});'>Bar Chart</button>
+          <button class='btn header-btn' id='draw-column' onclick='drawVisualization("Title", "Field",${JSON.stringify(
+            totals
+          )});'>Column Chart</button>
           </div>
         </header>
         <main>
