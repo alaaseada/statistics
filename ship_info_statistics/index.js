@@ -1,8 +1,13 @@
+// import { _query, _queryAll } from './helpers';
+
+// const summarizing_option_form = _query('summarizing_option_form');
+// const result_table = _query('result_table');
+
 const summarizing_option_form = document.querySelector(
   '#summarizing_option_form'
 );
-
 const result_table = document.querySelector('#result_table');
+
 let report_window;
 
 summarizing_option_form.addEventListener('submit', (e) => {
@@ -44,10 +49,9 @@ function summarize_Table(tableId, selected_filters) {
       return row[tableHeaders.indexOf(selected_filters[0])];
     }
   });
-
   let totals = {};
 
-  if (summary_cols.length === 2) {
+  if (selected_filters.length === 2) {
     const root_distinct_values = Array.from(
       new Set(summary_cols.map((item) => item[0]))
     ).filter((elem) => elem);
@@ -72,11 +76,14 @@ function summarize_Table(tableId, selected_filters) {
         return { [child_item]: total };
       });
     });
-  } else if (summary_cols.length === 1) {
-    distinct_status.forEach((value) => {
+  } else if (selected_filters.length === 1) {
+    const distinct_values = Array.from(
+      new Set(summary_cols.map((item) => item))
+    ).filter((elem) => elem);
+    distinct_values.forEach((value) => {
       const value_to_compare = value;
       if (value === '') value = 'empty';
-      totals[value] = summary_col.reduce((total, currentValue) => {
+      totals[value] = summary_cols.reduce((total, currentValue) => {
         if (currentValue === value_to_compare) {
           total += 1;
         }
@@ -84,6 +91,7 @@ function summarize_Table(tableId, selected_filters) {
       }, 0);
     });
   }
+  console.log(totals);
   // ================Display=============
   report_window.document.write(`
     <html>

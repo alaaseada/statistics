@@ -1,7 +1,6 @@
 const chart_container = document.querySelector('#chartContainer');
 
 function prepareChartData(title, summary_col, totals) {
-  delete totals['empty'];
   var data = new google.visualization.DataTable();
   data.addColumn('string', summary_col);
   data.addColumn('number', title);
