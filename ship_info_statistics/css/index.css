@@ -58,21 +58,6 @@ header h1 {
 .btn-container {
   margin-top: 20px;
 }
-
-#chartContainer {
-  width: 100%;
-  height: 500px;
-  max-height: calc(100vh - 200px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#pieChart {
-  width: 70%;
-  height: 100%;
-  display: block;
-  position: relative;
-}
 .form {
   width: fit-content;
   margin-bottom: 20px;
@@ -88,6 +73,6 @@ header h1 {
   margin-left: 10px;
 }
 
-#chartContainer{
+#chartContainer {
   width: 100%;
 }

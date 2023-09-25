@@ -17,9 +17,9 @@ summarizing_option_form.addEventListener('submit', (e) => {
     )
     .map((elem) => elem.value);
   // allow to comined 2 filters for now
-  if(selected_filters.length > 2) {
-    alert('Sorry! You can combine only 2 filters for now.')
-    return
+  if (selected_filters.length > 2) {
+    alert('Sorry! You can combine only 2 filters for now.');
+    return;
   }
   // Open the window
   if (report_window) report_window.close();
@@ -32,12 +32,13 @@ summarizing_option_form.addEventListener('submit', (e) => {
 function summarize_Table(tableId, selected_filters) {
   // Get table Headers
   var tableHeaders = Array.prototype.map.call(
-    document.querySelectorAll(`#${tableId} thead tr th`),
+    _queryAll(`#${tableId} thead tr th`),
     (th) => th.innerHTML
   );
+
   // Calculate Summaries
   var tableInfo = Array.prototype.map.call(
-    document.querySelectorAll(`#${tableId} tbody tr`),
+    _queryAll(`#${tableId} tbody tr`),
     (tr) => {
       return Array.prototype.map.call(tr.querySelectorAll('td'), (td) => {
         return td.innerHTML;
@@ -55,6 +56,7 @@ function summarize_Table(tableId, selected_filters) {
       return row[tableHeaders.indexOf(selected_filters[0])];
     }
   });
+
   let totals = {};
 
   // Aggregate 2 filters
@@ -105,15 +107,16 @@ function summarize_Table(tableId, selected_filters) {
     <html>
       <head>
         <title>Summary of result data</title>
-        <link rel="stylesheet" href="index.css" />`);
+        <link rel="stylesheet" href="css/index.css" />    
+        <link rel="stylesheet" href="css/charts.css" />
+`);
 
   var script = document.createElement('script');
-  script.src = 'loader.js';
+  script.src = 'js/loader.js';
   report_window.document.write(script.outerHTML);
   report_window.document.write(
-    `<script>google.charts.load('current',{'packages':['corechart', 'table']});</script>`
+    `<script>google.charts.load('current',{'packages':['corechart', 'table', 'geochart']});</script>`
   );
-
 
   report_window.document.write(`</head>
       <body>
@@ -121,25 +124,37 @@ function summarize_Table(tableId, selected_filters) {
           <h1>Statistics</h1>
           <div class='btn-container'>
       `);
-  if(selected_filters.length === 1){
-    const fieldName = selected_filters[0]
-    const title = "Number of vessels based on " + fieldName
+  if (selected_filters.length === 1) {
+    const fieldName = selected_filters[0];
+    const title = 'Number of vessels based on ' + fieldName;
     report_window.document.write(`
           <button class='btn header-btn' id='draw-pie' onclick='drawPieChart("${title}", "${fieldName}",${JSON.stringify(
-            totals
-          )});'>Pie Chart</button>
+      totals
+    )});'>Pie Chart</button>
           <button class='btn header-btn' id='draw-bar' onclick='drawBarChart("${title}","${fieldName}",${JSON.stringify(
-            totals
-          )});'>Bar Chart</button>
+      totals
+    )});'>Bar Chart</button>
           <button class='btn header-btn' id='draw-column' onclick='drawVisualization("${title}","${fieldName}",${JSON.stringify(
-            totals
-          )});'>Column Chart</button>
-    `)
-  }else{
+      totals
+    )});'>Column Chart</button>
+    `);
+    if (selected_filters[0] === 'Country Flag') {
+      report_window.document.write(`
+          <button class='btn header-btn' id='draw-geo-chart' onclick='drawGeoChart("${title}", "${fieldName}",${JSON.stringify(
+        totals
+      )});'>Geo Chart</button>`);
+    }
+  } else {
+    const heading = selected_filters[0];
+    const title =
+      'Number of vessels based on ' +
+      heading +
+      ' and grouped by ' +
+      selected_filters[1];
     report_window.document.write(`
-     <button class='btn header-btn' id='draw-combo' onclick='drawComboVisualization("Title", "Field",${JSON.stringify(
-            totals
-          )});'>Combo Chart</button>
+     <button class='btn header-btn' id='draw-combo' onclick='drawComboVisualization("${title}", "${heading}",${JSON.stringify(
+      totals
+    )});'>Combo Chart</button>
     `);
   }
 
@@ -154,7 +169,7 @@ function summarize_Table(tableId, selected_filters) {
         </main>`);
 
   var script = document.createElement('script');
-  script.src = 'utils.js';
+  script.src = 'js/utils.js';
   report_window.document.write(script.outerHTML);
 
   report_window.document.write(`
