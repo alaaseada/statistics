@@ -1,25 +1,31 @@
-// import { _query, _queryAll } from './helpers';
+import { _query, _queryAll } from './helpers.js';
 
-// const summarizing_option_form = _query('summarizing_option_form');
-// const result_table = _query('result_table');
-
-const summarizing_option_form = document.querySelector(
-  '#summarizing_option_form'
-);
-const result_table = document.querySelector('#result_table');
+// Grab the elements that contain data
+const summarizing_option_form = _query('summarizing_option_form');
+const result_table = _query('result_table');
 
 let report_window;
 
+// Handle the filters form's submit event
 summarizing_option_form.addEventListener('submit', (e) => {
   e.preventDefault();
+  // Get the selected filters
   const selected_filters = [].filter
     .call(
       summarizing_option_form.querySelectorAll('input[type=checkbox]'),
       (elem) => elem.checked
     )
     .map((elem) => elem.value);
+  // allow to comined 2 filters for now
+  if(selected_filters.length > 2) {
+    alert('Sorry! You can combine only 2 filters for now.')
+    return
+  }
+  // Open the window
   if (report_window) report_window.close();
   report_window = window.open('', '_blank');
+
+  // Call the summerizing table
   summarize_Table('result_table', selected_filters);
 });
 
@@ -51,6 +57,7 @@ function summarize_Table(tableId, selected_filters) {
   });
   let totals = {};
 
+  // Aggregate 2 filters
   if (selected_filters.length === 2) {
     const root_distinct_values = Array.from(
       new Set(summary_cols.map((item) => item[0]))
@@ -76,6 +83,7 @@ function summarize_Table(tableId, selected_filters) {
         return { [child_item]: total };
       });
     });
+    // Calculate totals for 1 filter
   } else if (selected_filters.length === 1) {
     const distinct_values = Array.from(
       new Set(summary_cols.map((item) => item))
@@ -103,31 +111,45 @@ function summarize_Table(tableId, selected_filters) {
   script.src = 'loader.js';
   report_window.document.write(script.outerHTML);
   report_window.document.write(
-    `<script>google.charts.load('current',{'packages':['corechart']});</script>`
+    `<script>google.charts.load('current',{'packages':['corechart', 'table']});</script>`
   );
+
 
   report_window.document.write(`</head>
       <body>
         <header>
           <h1>Statistics</h1>
           <div class='btn-container'>
-          <button class='btn header-btn' id='draw-pie' onclick='drawPieChart("Title", "Field",${JSON.stringify(
+      `);
+  if(selected_filters.length === 1){
+    const fieldName = selected_filters[0]
+    const title = "Number of vessels based on " + fieldName
+    report_window.document.write(`
+          <button class='btn header-btn' id='draw-pie' onclick='drawPieChart("${title}", "${fieldName}",${JSON.stringify(
             totals
           )});'>Pie Chart</button>
-          <button class='btn header-btn' id='draw-bar' onclick='drawBarChart("Title", "Field",${JSON.stringify(
+          <button class='btn header-btn' id='draw-bar' onclick='drawBarChart("${title}","${fieldName}",${JSON.stringify(
             totals
           )});'>Bar Chart</button>
-          <button class='btn header-btn' id='draw-column' onclick='drawVisualization("Title", "Field",${JSON.stringify(
+          <button class='btn header-btn' id='draw-column' onclick='drawVisualization("${title}","${fieldName}",${JSON.stringify(
             totals
           )});'>Column Chart</button>
-          <button class='btn header-btn' id='draw-combo' onclick='drawComboVisualization("Title", "Field",${JSON.stringify(
+    `)
+  }else{
+    report_window.document.write(`
+     <button class='btn header-btn' id='draw-combo' onclick='drawComboVisualization("Title", "Field",${JSON.stringify(
             totals
           )});'>Combo Chart</button>
+    `);
+  }
+
+  report_window.document.write(`
           </div>
         </header>
         <main>
           <section>
             <div id="chartContainer"></div>
+            <div id="tableContainer"></div>
           </section>
         </main>`);
 

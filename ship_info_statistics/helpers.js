@@ -4,8 +4,8 @@ const _query = (tag) => {
     : document.querySelector(`.${tag}`);
 };
 
-const __queryAll = (q) => {
+const _queryAll = (q) => {
   return document.querySelectorAll(`${q}`);
 };
 
-export { _query, __queryAll };
+export { _query, _queryAll };

@@ -1,4 +1,5 @@
 const chart_container = document.querySelector('#chartContainer');
+const table_container = document.querySelector('#tableContainer');
 
 function prepareChartData(title, summary_col, totals) {
   var data = new google.visualization.DataTable();
@@ -49,6 +50,9 @@ function drawBarChart(title, summary_col, totals) {
   // Instantiate and draw our chart, passing in some options.
   var chart = new google.visualization.BarChart(chart_container);
   chart.draw(data, options);
+
+  console.log('I am here')
+  drawTableChart()
 }
 
 function drawVisualization(title, summary_col, totals) {
@@ -76,4 +80,21 @@ function drawComboVisualization(title, summary_col, totals) {
     seriesType: 'bars',
   };
   chart.draw(data, options);
+}
+
+function drawTableChart() {
+  table_container.innerHTML = '<h1>Helloooo</h1>'
+  const data = new google.visualization.DataTable();
+  data.addColumn('string', 'Name');
+  data.addColumn('number', 'Salary');
+  data.addColumn('boolean', 'Full Time Employee');
+  data.addRows([
+    ['Mike',  {v: 10000, f: '$10,000'}, true],
+    ['Jim',   {v:8000,   f: '$8,000'},  false],
+    ['Alice', {v: 12500, f: '$12,500'}, true],
+    ['Bob',   {v: 7000,  f: '$7,000'},  true]
+  ]);
+
+  const table = new google.visualization.Table(table_container);
+  table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
 }

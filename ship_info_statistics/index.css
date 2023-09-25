@@ -87,3 +87,7 @@ header h1 {
 .form-row label {
   margin-left: 10px;
 }
+
+#chartContainer{
+  width: 100%;
+}

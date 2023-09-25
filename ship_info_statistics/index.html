@@ -14,23 +14,30 @@
           type="checkbox"
           id="ShTypeList"
           name="ShTypeList"
-          value="ShType List"
+          value="Ship Type"
         />
         <label for="ShTypeList">نوع السفينة</label><br />
         <input
           type="checkbox"
           id="local_agent_list"
           name="local_agent_list"
-          value="Local Agent List"
+          value="Local Agent"
         />
         <label for="local_agent_list">التوكيل الملاحي</label><br />
         <input
           type="checkbox"
           id="unloaded_cargo_type_list"
           name="unloaded_cargo_type_list"
-          value="Unload Cargo Type List"
+          value="Unload Cargo Type"
         />
         <label for="unloaded_cargo_type_list">نوع الحمولة المفرغة</label><br />
+        <input
+          type="checkbox"
+          id="Country_Flag"
+          name="Country_Flag"
+          value="Country Flag"
+        />
+        <label for="Country_Flag">الجنسية</label><br />
       </div>
       <button class="btn" type="submit" id="summarize-btn">Summarize</button>
     </form>
@@ -42,10 +49,10 @@
           <th>MMSI</th>
           <th>ShName</th>
           <th>CSgn</th>
-          <th>ShType List</th>
+          <th>Ship Type</th>
           <th>IMO</th>
-          <th>CountryFlag</th>
-          <th>Local Agent List</th>
+          <th>Country Flag</th>
+          <th>Local Agent</th>
           <th>ShLength</th>
           <th>Gross Tonnage</th>
           <th>Net Tonnage</th>
@@ -57,7 +64,7 @@
           <th>Actual Arrival Time</th>
           <th>Unload Country</th>
           <th>Unload Port</th>
-          <th>Unload Cargo Type List</th>
+          <th>Unload Cargo Type</th>
           <th>Unload Cargo Weight</th>
           <th>Unload 20</th>
           <th>Unload 40</th>
@@ -65,7 +72,7 @@
           <th>Unload Others</th>
           <th>Load Country</th>
           <th>Load Port</th>
-          <th>Load Cargo Type List</th>
+          <th>Load Cargo Type</th>
           <th>Load Cargo Weight</th>
           <th>Load 20</th>
           <th>Load 40</th>
@@ -3252,7 +3259,7 @@
           <td>Charter</td>
         </tr>
       </tbody>
-    </table> -->
+    </table> 
       <thead>
         <tr>
           <th>RecID</th>
